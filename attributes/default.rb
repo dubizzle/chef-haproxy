@@ -30,4 +30,6 @@ default['haproxy']['ssl_member_port'] = "8443"
 default['haproxy']['dev']['src_dir'] = '/usr/local/haproxy-1.5'
 default['haproxy']['dev']['download_url'] = "http://haproxy.1wt.eu/download/1.5/src/snapshot/haproxy-ss-20120403.tar.gz"
 default['haproxy']['dev']['checksum'] = 'ba0424bf7d23b3a607ee24bbb855bb0ea347d7ffde0bec0cb12a89623cbaf911'
-
+default['haproxy']['config_file_name'] = "haproxy.cfg"
+default['haproxy']['config_dir'] = "/etc/haproxy"
+default['haproxy']['dest_dir'] = "/usr/local"

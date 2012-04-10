@@ -11,3 +11,6 @@ recipe "haproxy-dev::app_lb", "Installs and configures haproxy by searching for 
 %w{ debian ubuntu redhat centos fedora}.each do |os|
   supports os
 end
+%w{ runit }.each do |ckbk|
+  depends ckbk
+end

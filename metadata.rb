@@ -1,3 +1,4 @@
+name              "haproxy"
 maintainer        "Opscode, Inc."
 maintainer_email  "cookbooks@opscode.com"
 license           "Apache 2.0"
@@ -10,4 +11,8 @@ recipe "haproxy-dev::app_lb", "Installs and configures haproxy by searching for 
 
 %w{ debian ubuntu redhat centos fedora}.each do |os|
   supports os
+end
+
+%w{ ark runit build-essential }.each do |ckbk|
+  depends ckbk
 end

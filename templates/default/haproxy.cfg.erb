@@ -27,11 +27,11 @@ defaults
 #  server localhost 127.0.0.1:4001 weight 1 maxconn <%= node["haproxy"]["member_max_connections"] %> check 
 
 <% node["haproxy"]["redis_sets"].each do |i| %>
-  listen <%= i['name'] %>
-        bind *:<%= i['port'] %>
+  listen <%= i["name"] %>
+        bind *:<%= i["port"] %>
         mode tcp
         option redispatch
-        server redis_index 127.0.0.1:6379 weight 1 check port 6379 inter 2000
+        server redis_index <%= node["haproxy"]["redis"]["ip"] %>:<%= node["haproxy"]["redis"]["port"] %> weight 1 check port <%= node["haproxy"]["redis"]["port"] %> inter 2000
 <% end %>
 
 <% if node["haproxy"]["enable_admin"] -%>
